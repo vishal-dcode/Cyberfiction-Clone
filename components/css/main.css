@@ -1,0 +1,231 @@
+/*1 --------------------------------- Archive -------------------------------- */
+canvas {
+  position: relative;
+  z-index: 9;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+.t-bold {
+  font-weight: var(--fw-bold);
+}
+.t-thin {
+  font-weight: var(--fw-light);
+}
+.t-italic {
+  font-style: italic;
+}
+.t-stroke {
+  -webkit-text-stroke: 1px var(--clr-black);
+  color: transparent;
+}
+.sub-title_regular {
+  font-size: var(--fs-regular);
+  line-height: normal;
+}
+.sub-title_bold {
+  font-size: var(--fs-regular);
+  line-height: normal;
+  font-weight: var(--fw-bold);
+}
+.sub-title_heading {
+  font-size: var(--fs-3);
+  line-height: normal;
+  font-weight: var(--fw-bold);
+}
+#main {
+  position: relative;
+  overflow: hidden;
+}
+
+#page1 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#page2 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#page3 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#page4 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#loop {
+  position: absolute;
+  top: 30%;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+.main-copy-wrap {
+  font-size: calc(var(--fs-d1) * 1.2);
+  white-space: nowrap;
+  animation: loop 20s linear infinite;
+}
+@keyframes loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/*1 --------------------------------- Header --------------------------------- */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-1);
+}
+.nav_logo {
+  font-size: var(--fs-4);
+}
+.nav_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+}
+
+/*2 ---------------------------------- page1 ---------------------------------- */
+.sub-title {
+  position: absolute;
+  top: 48%;
+  left: 4rem;
+}
+/*2 ---------------------------------- page2 ---------------------------------- */
+.left-cont {
+  position: absolute;
+  top: 40%;
+  left: 4rem;
+}
+.right-cont {
+  position: absolute;
+  top: 50%;
+  right: 4rem;
+  text-align: end;
+}
+
+/*1 --------------------------------- Roadmap -------------------------------- */
+#roadmap {
+  position: relative;
+  height: 305vh;
+  width: 100%;
+  background-color: var(--clr-black);
+  z-index: 10;
+}
+#roadmap * {
+  color: var(--clr-white);
+}
+/*3 ----------------------------- Roadmap Header ----------------------------- */
+.roadmap_heading {
+  text-align: center;
+}
+.roadmap_heading h1 {
+  font-weight: var(--fw-bold);
+}
+/*3 ------------------------------ Roadmap Cards ----------------------------- */
+.card_wrapper {
+  padding: var(--spacing-2);
+  background-color: var(--clr-white);
+  aspect-ratio: 8/5.2;
+  width: 350px;
+  border-radius: 0.5rem;
+}
+.card_wrapper * {
+  color: var(--clr-black) !important;
+}
+.roadmap_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  align-items: center;
+  justify-content: center;
+}
+
+/*3 -------------------------------- Text Loop ------------------------------- */
+.text-loop {
+  position: absolute;
+  font-size: calc(var(--fs-d1) * 1.5);
+  white-space: nowrap;
+}
+.text-loop_cont {
+  position: relative;
+  z-index: -1;
+}
+.text-loop_cont > :nth-child(1) {
+  animation: loop-reverse 15s linear infinite;
+}
+.text-loop_cont > :nth-child(2) {
+  translate: 0px 120px !important;
+  animation: loop 12s linear infinite;
+}
+.text-loop_cont > :nth-child(3) {
+  translate: 0px 240px !important;
+  animation: loop-reverse 20s linear infinite;
+}
+@keyframes loop-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.text-loop span {
+  font-weight: var(--fw-bold);
+  -webkit-text-stroke: 1px var(--clr-white) !important;
+  color: transparent !important;
+}
+
+/*3 ------------------------------ Male Model 2 ------------------------------ */
+.male_model-2 {
+  height: 650px;
+  margin-inline: auto !important;
+}
+.male_model-cont {
+  position: relative;
+}
+.male_model-cont::after {
+  content: "";
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient(0deg, hsla(0, 18%, 8%, 1) 0%, hsla(0, 18%, 8%, 0.2) 30%, hsla(0, 18%, 8%, 0) 100%);
+  bottom: 28px;
+  z-index: 1;
+}
+.male_model-detail {
+  max-width: 550px;
+  margin-inline: auto !important;
+  text-align: center;
+}
+.vertical-line {
+  background-color: var(--clr-white);
+  opacity: 0.5;
+  height: 6rem;
+  width: 1px;
+  margin-block: var(--spacing-5);
+  margin-inline: auto;
+}
+
+/*1 --------------------------------- Footer --------------------------------- */
+#footer {
+  text-align: center;
+}
+#footer h1 {
+  font-size: calc(var(--fs-d1) * 1.5);
+  line-height: 1;
+  font-weight: var(--fw-bold);
+  -webkit-text-stroke: 1px var(--clr-white) !important;
+  color: transparent !important;
+}
